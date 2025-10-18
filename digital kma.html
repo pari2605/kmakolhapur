@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full-Page Digital Gallery</title>
+  <script src="../javascript/script.js"></script>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #292622;
+        color: #fff;
+        padding-top: 100px;
+        overscroll-behavior: none;
+        overflow-x: hidden;
+    }
+   /* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;   /* reduced padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: black;
+  font-weight: bold;
+  box-sizing: border-box; /* prevents overflow from padding */
+}
+.navbar .logo
+{
+  width: px;
+  height: 58px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;   /* keep in one line */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 15px;   /* reduced gap */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: large;     /* smaller font */
+  font-weight: bold;
+  white-space: nowrap; /* stops words breaking */
+}
+
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #00ffcc;
+    }
+
+     .event-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        color: #fff;
+    }
+
+    /* Full-page gallery grid */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 300px;
+        gap: 10px;
+        padding: 0 2rem;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+    }
+
+    /* Sliding and zoom effect */
+    .gallery-item:hover img {
+        transform: scale(1.2) translateY(-10px);
+    }
+
+    /* Overlay on hover */
+    .gallery-item::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 1;
+    }
+
+    /* Caption on hover */
+    .caption {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        font-weight: bold;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .gallery-item:hover .caption {
+        opacity: 1;
+    }
+
+    .event-title{
+        padding-top: 70px;
+    }
+
+    
+
+    @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: 1fr;
+            grid-auto-rows: 250px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+ <div > <img class="logo" src=https://res.cloudinary.com/drylz0m88/image/upload/v1760176810/logo_kma_mqqdr6.png alt="kma logo"></div>
+    <ul class="nav-links">
+      <li><a href="home.html" >Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="event.html" >Events</a></li>
+      <li><a href="digital kma.html" class="active">Digital KMA</a></li>
+      <li><a href="what we do.html" >What we do</a></li>
+      <li><a href="contact us.html" >Contact us</a></li>
+    </ul>
+</header>
+
+<section class="gallery-section full-screen">
+    <h2 class="event-title">21st August 2025 camp </h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424277/YVP08873_1_mix6y1.jpg alt="Photo 1">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424278/YVP08908_1_f3cw2r.jpg alt="Photo 2">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424279/YVP08861_1_eu3dx9.jpg alt="Photo 3">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424279/YVP08912_1_cdft9x.jpg alt="Photo 4">
+            <div class="caption"></div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <h2 class="event-title">24 August 2025 CME</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424276/YVP08947_1_k5mqws.jpg alt="Photo 5">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424276/YVP09016_1_y9xden.jpg alt="Photo 6">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424275/YVP09027_1_i76ijq.jpg alt="Photo 7">
+            <div class="caption"></div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <h2 class="event-title">14th September 2025</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424269/YVP_8848_k3j1qp.jpg alt="Photo 5">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424268/YVP_8770_rzb2cm.jpg alt="Photo 6">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424268/YVP_8854_jm1tu8.jpg alt="Photo 7">
+            <div class="caption"></div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <h2 class="event-title">15th September 2025</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424271/YSP00455_lqoooj.jpg alt="Photo 5">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424271/YSP00539_llog0c.jpg alt="Photo 6">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424269/YSP00565_o8f91z.jpg alt="Photo 7">
+            <div class="caption"></div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <h2 class="event-title">21st September 2025 CME</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424266/YVP_8976_1_rbbdii.jpg alt="Photo 5">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424266/YVP_8993_1_nmhdhr.jpg alt="Photo 6">
+            <div class="caption"></div>
+        </div>
+        <div class="gallery-item">
+            <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760424266/YVP_8974_1_o44r7z.jpg alt="Photo 7">
+            <div class="caption"></div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

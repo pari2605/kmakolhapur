@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events</title>
+    <script src="../javascript/script.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      overscroll-behavior: none;
+      overflow-x: hidden;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      background: #f8f9fa;
+    }
+
+    h1 {
+      background: #2c3e50;
+      background-image: url(https://res.cloudinary.com/drylz0m88/image/upload/v1760176809/gallery_2_zqlbl2.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: black;
+      text-align: center;
+      padding: 150px 20px;
+      font-size: 4rem;
+      margin-top: 70px; /* avoid overlap with navbar */
+    }
+
+    /* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;   /* reduced padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: black;
+  font-weight: bold;
+  box-sizing: border-box; /* prevents overflow from padding */
+}
+.navbar .logo
+{
+  width: px;
+  height: 58px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;   /* keep in one line */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 15px;   /* reduced gap */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: large;     /* smaller font */
+  font-weight: bold;
+  white-space: nowrap; /* stops words breaking */
+}
+
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #00ffcc;
+    }
+
+    /* Events layout */
+    .events-container {
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .flyer {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .event-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .event-content h3 {
+      margin: 10px 0;
+      color: #2c3e50;
+    }
+
+    .event-content p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .event-actions {
+      margin-top: 15px;
+    }
+
+    .event-actions a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn-form {
+      background: #3498db;
+      color: white;
+    }
+
+    .btn-form:hover {
+      background: #2980b9;
+    }
+
+    .btn-voucher {
+      background: #2ecc71;
+      color: white;
+    }
+
+    .btn-voucher:hover {
+      background: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div><img class="logo" src=https://res.cloudinary.com/drylz0m88/image/upload/v1760176810/logo_kma_mqqdr6.png alt="kma logo"></div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="event.html" class="active">Events</a></li>
+      <li><a href="digital kma.html">Digital KMA</a></li>
+      <li><a href="what we do.html" >What we do</a></li>
+      <li><a href="contact us.html">Contact us</a></li>
+    </ul>
+  </header>
+
+  <h1>Upcoming Events</h1>
+
+  <div class="events-container">
+    
+    <!-- Event 1 -->
+    <div class="event-card">
+      <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760609561/WhatsApp_Image_2025-10-11_at_3.19.08_PM_sqd1uw.jpg alt="Event Flyer" class="flyer">
+      <div class="event-content">
+        <h3>Annual Medical Conference</h3>
+        <p>Join us for an insightful conference with expert doctors and researchers.</p>
+        <div class="event-actions">
+          <a href="https://rb.gy/69di2j" target="_blank" class="btn-form">Register</a>
+          <a href="voucher1.pdf" target="_blank" class="btn-voucher">View Voucher</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

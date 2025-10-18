@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Kolhapur Medical Association</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+    <script src="../javascript/script.js"></script>
+
+  <style>
+    /* General Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      overscroll-behavior: none;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background-color: black;
+      font-weight: bold;
+    }
+
+    .navbar .logo {
+      width: px;
+      height: 58px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: large;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #00ffcc;
+    }
+
+    /* Hero Section */
+    .about-hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://res.cloudinary.com/drylz0m88/image/upload/v1760176806/gallery_1_sfj0gp.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+
+
+   
+
+    /* Governing Council & Past Presidents */
+    .council,
+    .past-presidents {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .council h2,
+    .past-presidents h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #004080;
+    }
+
+    .council-members {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .council-members .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      width: 220px;
+    }
+
+    .council-members .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .council-members .card:hover {
+      transform: translateY(-8px);
+    }
+
+   .history-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 20px;
+    }
+
+    .scroll {
+      background: #fdf6e3;
+      background-image: radial-gradient(circle, #fdf6e3 70%, #e0c68b 100%);
+      width: 85%;
+      max-width: 1100px;
+      padding: 80px 60px;
+      border: 6px solid #a67c00;
+      border-radius: 20px;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.3),
+                  0 15px 35px rgba(0,0,0,0.25);
+      position: relative;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    /* Scroll edges */
+    .scroll::before, 
+    .scroll::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      height: 50px;
+      background: #e0c68b;
+      border: 4px solid #a67c00;
+      border-radius: 50%;
+      z-index: -1;
+    }
+    .scroll::before { top: -25px; }
+    .scroll::after { bottom: -25px; }
+
+    .history-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: #5a3e1b;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #fff2cc;
+    }
+
+    .history-content {
+      white-space: pre-line; /* preserves your line breaks */
+    }
+
+    .past-presidents {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff8dc, #f5deb3);
+      background-image:url(https://res.cloudinary.com/drylz0m88/image/upload/v1760176809/gallery_2_zqlbl2.jpg);
+      background-size: contain;   /* fit entire image */
+  background-repeat: no-repeat;  /* avoid tiling */
+  background-position: center;  /* keep centered */
+  background-size: 100% 100%;
+    }
+
+    .past-presidents h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #5a2d0c;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .past-presidents h2::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: #b8860b;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 220px;
+      height: 180px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .card-front {
+      background: #fff;
+      color: #5a2d0c;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #deb887, #cd853f);
+      color: white;
+      transform: rotateY(180deg);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .cards-container {
+        gap: 20px;
+      }
+      .card {
+        width: 180px;
+        height: 150px;
+      }
+    }
+
+    footer {
+      background: beige;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+   
+  </style>
+</head>
+
+<body>
+    <header class="navbar">
+    <div> <img class="logo" src=https://res.cloudinary.com/drylz0m88/image/upload/v1760176810/logo_kma_mqqdr6.png alt="kma logo"></div>   
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html" class="active">About us</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="digital kma.html">Digital KMA</a></li>
+      <li><a href="what we do.html" >What we do</a></li>
+      <li><a href="contact us.html">Contact us</a></li>
+    </ul>
+  </header>
+
+    <section class="about-hero">
+    <h1 data-aos="fade-up">About Us</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Discover our journey, leadership, and legacy.</p>
+  </section>
+
+ 
+  <section>
+    <div class="history-section">
+    <div class="scroll">
+      <h2 class="history-title">Our History</h2>
+      <div class="history-content">
+Dr. G. G. Vatave, M.D. (Founder President) a leading practitioner of Kolhapur called all the doctors in Kolhapur for party at home in April 1924. At that time, he suggested to the doctors his idea of forming a medical association in Kolhapur. The idea was unanimously approved by all and the Kolhapur Medical Association was formed. Dr. G. G. Vatave was unanimously elected as the Founder President. The meetings were held on the first Sunday of every month in Dr. Vatave’s house. Dr. Vatave was President for 3 years. He died on 25th July 1927.
+
+After the death of Dr. Vatave, there was a dormant period in the life of KMA till 1929. Dr. S.P. Shirgaonkar, M.D., Bombay came to Kolhapur in 1929 and gave an impetus to KMA. He was president of KMA for 16 years from 1929 till 1945. He was sincere and active President and methodic in his work.
+
+Formerly there were two Medical Association in Kolhapur. One KMA for MBBS doctors and another for LCPS and LMP doctors. But during 1935-36 the other association joined together with KMA. At the same time constitution of KMA was prepared for the first time.
+
+During Presidentship of Dr. S. R. Shirgaonkar 2nd Maharashtra and Karnataka Provincial Medical Conference was held in Kolhapur on 27-10-1937.
+
+Dr. S. R. Shirgaonkar left the Presidentship in 1945 and Dr. P.V. Gokhale, M.D. (Patholgist) became president in 1945-46. Then Dr. P. D. Khanolkar, M.D. became the president for 1946-50. During his Presidentship 10th Maharashtra and Karnataka Provincial Medical Conference was held in Kolhapur on 07-05-1949.
+
+Dr. S. R. Shirgaonkar who was president of KMA for 16 years died in September 1951. Dr. K. V. Kelkar was president for 1950-53. It was decided to buy a plot in the centre of the city and to have a building of the KMA and efforts were made in this direction since 1947. It was only in 1949 that KMA got a plot near Belbag through Mr. S. M. Bam, the then collector of Kolhapur and the foundation stone was put at his hands on 17th May 1952.
+
+It was during Dr. K. V. Kelkar’s Presidentship that the present building was constructed during 1950-53.
+
+Dr. R. B. Rashingkar was president for 1953-55. The Child Welfare Centre was inaugurated in the same building of KMA. Every member are being held in this new building. KMA has done remarkable service in mass cholera inoculations in 1927 and plague vaccine inoculation in 1929. KMA started a mild centre on 21st August 1954.
+
+During the Presidentship of Dr. V. N. Ranade, M.S. (1955-56) Dr. P. B. Bhadre, M.S. FCPS (1956-59) Dr. L. J. Nagaonkar Kulkarni, MBBS there was good progress of KMA.
+
+Dr. G. G. Tembe was president for 1962-64. During his Presidentship 4th Maharashtra State Medical Conference was held at Kolhapur from 24th to 26th October 1963. Dr. M. D. Jadhav M.D. was president for 1964-66. During his Presidentship India Pakistan war was going on. KMA contributed much for this national work. Maharashtra State Government. His Highness Maharaja sing visited KMA on 28-09-1965 and accepted the cheque for this national cause and appreciated the work done by KMA.
+
+During Presidentship of Dr. Gajanan M. Jadhav (1981-82) further renovation of the KMA building was done. One front varandha was added and colouring was done. Dr. Jadhav prepared the upto-date record of KMA from 1924 till 1982.
+
+The name board of all Past presidents and secretaries of KMA from 1924 till today was prepared and it was inaugurated at the hands of Dr. V. H. Salaskar, President of Indian Medical Association, Maharashtra State Branch on 3rd September 1982. During the Presidentship of Dr. Prakash Gunde 1982-83 our branch was awarded a Certificate of appreciation for activities of the Branch. Dr. Smt. Lalita Rao, then Minister for Health Government of Maharashtra visited our branch. During the year 1983-84 under the Presidentship of Dr. C. D. Nallulwar, KMA has taken active part in Polio Immunisation of 5000 children from slums of Kolhapur. The most eye catching activity during that year was membership drive of 50% new enrolment.
+
+During PRESIDENTSHIP of Dr. V. V. Ghotge, KMA got prestigious Dr. R. K. Mendha Trophy for the best community project. During Presidentship of Dr. A. B. Kalawade (1988-89) and Dr. D. Y. Sulgaonkar (1989-91) extension of upper meeting hall and addition of porch was done.
+
+Dr. A. P. Sasurkar, 1992-93 did teak-tree plantation in the premises of the KMA building.
+
+On 17th September 1993 under Presidentship of Dr. Jadhav Dhekale (1993-94) in protest of the consumer Protection Act, KMA observed a protest day as a part of all India action. About 200 doctors took part in the procession and handed over the memorandum to the collector.
+
+KMA is always in forefront in doing all the assistance to the people. The members of KMA have taken active part in all the Medical activities. Family Planning, National Health Scheme arranged by Lions, Rotary, Jaycees, Giants, Zilla Parishad, Kolhapur Municipal Corporation etc. KMA has conducted several medical and surgical camps and seminars. Bal Arogya Kendra is working in the same building.
+
+KMA “FLASH” the news bulletin of our association was stared during 1981-82 in the Presidentship of Dr. G. M. Jadhav. During 1993, letter press printing was replaced by Desk Top Publishing and Offset Printing. This ‘Face-lift’ to the bulletin was given during the editorship of Dr. Uddhav A. Patil making it more attractive, readable and interesting.
+
+IMA Kolhapur Branch sent the nomination of Dr. G. M. Jadhav, senior most member of KMA for the Presidentship of Indian Medical Association, Maharashtra State for the year 1994-95, Dr. G. M. Jadhav was elected unanimously for the Presidentship. This honour came to KMA for the first time in 70 years. During this tenure, Dr. D. Y. Sulgaonkar worked as State Jt. Secretary.
+
+During 1994-95, IMA Kolhapur branch received prestigious Dr. R.K. Mendha Trophy and Merit Certificate for the Best outstanding service. The credit does to outstanding President Dr. D. D. Wagwekar and Secretary Dr. Ajit Chandelkar and rulling President Dr. Shakil Momin and Secretary Dr. Radhika Joshi. This trophy was given to Kolhapur Branch on 11th November 1995 at Nasik Annual conference during Presidentship of Dr. G. M. Jadhav.
+
+Dr. Suresh Nadkarni of Mumbai donated Rs. 1 lakh amount to IMA, Maharashtra State. Out of that interest he kept first prize of Rs. 10,000 and merit Certificate for the doctors who educate the public in medical problems in Newspaper as well as in speeches, medical camps etc. Dr. P. G. Kulkarni of Kolhapur Branch received Merit Certificate at Nasik Annual conference.
+
+IMA Kolhapur Branch has hosted 35th Annual IMA Maharashtra State Conference at Kolhapur on 16th and 17th Nov. 1996 at Keshavrao Bhosale Natyagriha. Dr. G. M. Jadhav immediate past State President was the Chairman and Dr. Ajit Chandelkar was organizing Secretary of this conference.
+
+President of KMA Dr. Pratibha Bhupali was chairman of Reception Committee and Secretary of KMA Dr. Uddhav A. Patil was the joint organizing secretary of this conference. That year KMA President Dr. Mrs. Pratibha Bhupali, Secretary, Dr. V. A. Bhosale and KMA members has done splendid outstanding work, in all the fields. So that year prestigious Dr. R. K. Mendha Trophy was again declared for Kolhapur Branch. This Trophy alongwith Merit Certificate was given to Kolhapur Branch at the time of Annual State Conference at Kolhapur on 16th November 1996.
+
+During the Presidentship of Dr. Ajit Chandelkar 1997-98 KMA was selected for Merit Certificate of R. K. Menda Trophy. Dr. Mrs. Radhika Joshi was president 1998-99. KMA was awarded Certificate of Merit for Dr. R. K. Menda Trophy. During her presidentship Diamond Jubilees of KMA was celebrated. Dr. V. A. Bhosale was president during 1990-2000 and during his period “KMA ART CIRCLE” was established on 27th July 1999 at the hand’s of Smt. Bhakti Barve Inamdar. KMA participated in Orisa Cyclone Relief Fund by giving Rs. 13403/-.
+
+When Dr. Uddhav Patil was President during 2000-2001 Dr. R. K. Menda Trophy of 1999-2000 was awarded to KMA and the credit goes to Dr. V. A. Bhosale and Mr. Uddhav Patil. Computerisation of KMA office was done and Internet Club was established KMA flash ws improved qualitatively. KMA participated in Gujarat Earth Quake relief fund by giving donation of Rs. 2 lakhs.
+
+During Presidentship of Dr. Deepak Ambardekar 2001-2002. Dr. R. K. Menda Trophy was awarded permanently to KMA for Best Branch in Maharashtra at Baramati Annual State Conference at the hands of Hon. Health Minister Digvijay Khanvilkar. KMA members, Dr. Ajit Started ‘DAAS’ Biomedical waste disposal plant supported by KMA. Air Conditioning of KMA Hall was done.
+
+During Presidentship of Dr. Shivkumar Solapurkar (Kulkanri) 2002-2003, KMA Travellers Club was stared. Instead of one day medical Seminor, 2 days seminar was arranged. Aids Awareness and Counseling Centre was started. For both the functions, State President Dr. Dilip Guha of Nagpur was Chief Guest.
+
+Our seminar most member and Past President of our Branch Maharashtra state, Dr. G. M. Jadhav received Dr. A. K. Sinha National Award at Trivendrum on 19th July 2002 at the time of 77th All India I.M.A. Conference at the hands of Dr. Ketan Desai, I.M.A. National President and Past President of Medical Council of India. This award is given in memory of Late Dr. A. K. N. Sinha who was president of I. M. A. Delhi and Medical Council of India for many years. This award is given for meritorious services in I. M. A. and other medical fields and it includes Silver Plaque, Scroll and Cash money. This is a great honour not only to K.M.A. but also to I.M.A. Maharashtra State Branch.
+
+During Presidentship fo Dr. Arun Kulkarni 2003-2004. Kolhapur Medical Association is hoisting 43rd I.M. A., Maharashtra State Conference MASTACON on 14th, 15th and 16th Nov. 2003, at Kolhapur at shahu Sanskrit Hall. For this Conference Dr. G. M. Jadhav is parton. Dr. D. Y. Sulgaonkar is Conference Chairman. President Dr. Arun Kulkarni is chairman of reception Committee and Dr. Arun Kanbarkar is organizing Secretary. All the members of KMA are taking great efforts to make this conference a grand success. After this Conference KMA has decided to have New Building with residential quarters and other amenities.
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+
+    <section class="council">
+    <h2 data-aos="fade-left">👥 Our Committee Members </h2>
+    <div class="council-members">
+     <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760176803/commeette_zw6zex.jpg>
+    </div>
+  </section>
+
+    <section class="past-presidents">
+    <h2>🏅 Past Presidents</h2>
+    <div class="cards-container">
+
+<!-- Past Presidents Cards -->
+
+<!-- 1924-1927 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. G. G. VATAWE</p></div>
+  <div class="card-back"><p>1924 – 1927</p></div>
+</div></div>
+
+<!-- 1929-1935 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. S. R. SHIRGAONKAR</p></div>
+  <div class="card-back"><p>1929 – 1935</p></div>
+</div></div>
+
+<!-- 1935-1945 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. S. R. SHIRGAONKAR</p></div>
+  <div class="card-back"><p>1935 – 1945</p></div>
+</div></div>
+
+<!-- 1945-1946 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. P. V. GOKHALE</p></div>
+  <div class="card-back"><p>1945 – 1946</p></div>
+</div></div>
+
+<!-- 1946-1950 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. P. D. KHANOLKAR</p></div>
+  <div class="card-back"><p>1946 – 1950</p></div>
+</div></div>
+
+<!-- 1950-1953 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. K. V. KELKAR</p></div>
+  <div class="card-back"><p>1950 – 1953</p></div>
+</div></div>
+
+<!-- 1953-1955 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. B. B. RASHINGKAR</p></div>
+  <div class="card-back"><p>1953 – 1955</p></div>
+</div></div>
+
+<!-- 1955-1956 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. V. N. RANADE</p></div>
+  <div class="card-back"><p>1955 – 1956</p></div>
+</div></div>
+
+<!-- 1956-1959 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. P. B. BHADRE</p></div>
+  <div class="card-back"><p>1956 – 1959</p></div>
+</div></div>
+
+<!-- 1959-1962 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. L. J. KULKARNI</p></div>
+  <div class="card-back"><p>1959 – 1962</p></div>
+</div></div>
+
+<!-- 1962-1964 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. G. G. TEMBE</p></div>
+  <div class="card-back"><p>1962 – 1964</p></div>
+</div></div>
+
+<!-- 1964-1966 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. M. D. JADHAV</p></div>
+  <div class="card-back"><p>1964 – 1966</p></div>
+</div></div>
+
+<!-- 1966-1969 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. S. R. KITTUR</p></div>
+  <div class="card-back"><p>1966 – 1969</p></div>
+</div></div>
+
+<!-- 1969-1971 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. K. S. CHITNIS</p></div>
+  <div class="card-back"><p>1969 – 1971</p></div>
+</div></div>
+
+<!-- 1971-1973 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. M. N. GOGATE</p></div>
+  <div class="card-back"><p>1971 – 1973</p></div>
+</div></div>
+
+<!-- 1973-1975 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. V. H. VAZE</p></div>
+  <div class="card-back"><p>1973 – 1975</p></div>
+</div></div>
+
+<!-- 1975-1976 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. V. S. KARANDE</p></div>
+  <div class="card-back"><p>1975 – 1976</p></div>
+</div></div>
+
+<!-- 1976-1977 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. B. B. MULIK</p></div>
+  <div class="card-back"><p>1976 – 1977</p></div>
+</div></div>
+
+<!-- 1977-1978 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. S. L. DESAI</p></div>
+  <div class="card-back"><p>1977 – 1978</p></div>
+</div></div>
+
+<!-- 1978-1979 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. S. J. KUDALKAR</p></div>
+  <div class="card-back"><p>1978 – 1979</p></div>
+</div></div>
+
+<!-- 1979-1980 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. N. K. JIRGE</p></div>
+  <div class="card-back"><p>1979 – 1980</p></div>
+</div></div>
+
+<!-- 1980-1981 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. R. S. GULAWANI</p></div>
+  <div class="card-back"><p>1980 – 1981</p></div>
+</div></div>
+
+<!-- 1982-1983 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. P. A. GUNE</p></div>
+  <div class="card-back"><p>1982 – 1983</p></div>
+</div></div>
+
+<!-- 1983-1984 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. C. D.</p></div>
+  <div class="card-back"><p>1983 – 1984</p></div>
+</div></div>
+
+<!-- 1984-1985 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. V. V. GHOTGE</p></div>
+  <div class="card-back"><p>1984 – 1985</p></div>
+</div></div>
+
+<!-- 1985-1986 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. S. M. ATHALE</p></div>
+  <div class="card-back"><p>1985 – 1986</p></div>
+</div></div>
+
+<!-- 1986-1987 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. C. R. SHAH</p></div>
+  <div class="card-back"><p>1986 – 1987</p></div>
+</div></div>
+
+<!-- 1987-1988 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. D. G. GUNE</p></div>
+  <div class="card-back"><p>1987 – 1988</p></div>
+</div></div>
+
+<!-- 1988-1989 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. A. B. KALAVADE</p></div>
+  <div class="card-back"><p>1988 – 1989</p></div>
+</div></div>
+
+<!-- 1989-1991 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. D. Y. SULGAONKAR</p></div>
+  <div class="card-back"><p>1989 – 1991</p></div>
+</div></div>
+
+<!-- 1991-1992 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. R. G. MIRJE</p></div>
+  <div class="card-back"><p>1991 – 1992</p></div>
+</div></div>
+
+<!-- 1992-1993 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. A. P. SASURKAR</p></div>
+  <div class="card-back"><p>1992 – 1993</p></div>
+</div></div>
+
+<!-- 1993-1994 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. B. G. JADHAV</p></div>
+  <div class="card-back"><p>1993 – 1994</p></div>
+</div></div>
+
+<!-- 1994-1995 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. D. D. WAGAVEKAR</p></div>
+  <div class="card-back"><p>1994 – 1995</p></div>
+</div></div>
+
+<!-- 1995-1996 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. SHAKIL MOMIN</p></div>
+  <div class="card-back"><p>1995 – 1996</p></div>
+</div></div>
+
+<!-- 1996-1997 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. MRS. BHUPALI PRATIBHA</p></div>
+  <div class="card-back"><p>1996 – 1997</p></div>
+</div></div>
+
+<!-- 1997-1998 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. A. G. CHANDELKAR</p></div>
+  <div class="card-back"><p>1997 – 1998</p></div>
+</div></div>
+
+<!-- 1998-1999 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. JOSHI RADHIKA</p></div>
+  <div class="card-back"><p>1998 – 1999</p></div>
+</div></div>
+
+<!-- 1999-2000 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. V. A. BHOSALE</p></div>
+  <div class="card-back"><p>1999 – 2000</p></div>
+</div></div>
+
+<!-- 2000-2001 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. UDDHAV A. PATIL</p></div>
+  <div class="card-back"><p>2000 – 2001</p></div>
+</div></div>
+
+<!-- 2001-2002 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. AMBARDEKAR DEEPAK</p></div>
+  <div class="card-back"><p>2001 – 2002</p></div>
+</div></div>
+
+<!-- 2002-2003 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. SHIVKUMAR SOLAPURKAR</p></div>
+  <div class="card-back"><p>2002 – 2003</p></div>
+</div></div>
+
+<!-- 2003-2004 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. ARUN Y. KULKARNI</p></div>
+  <div class="card-back"><p>2003 – 2004</p></div>
+</div></div>
+
+<!-- 2004-2005 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. DEEPAK BABAR</p></div>
+  <div class="card-back"><p>2004 – 2005</p></div>
+</div></div>
+
+<!-- 2005-2006 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. AVINASH GOKHALE</p></div>
+  <div class="card-back"><p>2005 – 2006</p></div>
+</div></div>
+
+<!-- 2006-2007 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. ARUN KANBARKAR</p></div>
+  <div class="card-back"><p>2006 – 2007</p></div>
+</div></div>
+
+<!-- 2007-2008 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. PRATAP JITKAR</p></div>
+  <div class="card-back"><p>2007 – 2008</p></div>
+</div></div>
+
+<!-- 2008-2009 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. ROHINI LIMAYE</p></div>
+  <div class="card-back"><p>2008 – 2009</p></div>
+</div></div>
+
+<!-- 2009-2010 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. MRS. VIDYUT SHAH</p></div>
+  <div class="card-back"><p>2009 – 2010</p></div>
+</div></div>
+
+<!-- 2010-2011 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. SHIRISH PAWAR</p></div>
+  <div class="card-back"><p>2010 – 2011</p></div>
+</div></div>
+
+<!-- 2011-2012 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. HANMANT PATIL</p></div>
+  <div class="card-back"><p>2011 – 2012</p></div>
+</div></div>
+
+<!-- 2012-2013 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. MOHAN JOSHI</p></div>
+  <div class="card-back"><p>2012 – 2013</p></div>
+</div></div>
+
+<!-- 2013-2014 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. JAYANT WATVE</p></div>
+  <div class="card-back"><p>2013 – 2014</p></div>
+</div></div>
+
+<!-- 2014-2015 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. ANAND KAMAT</p></div>
+  <div class="card-back"><p>2014 – 2015</p></div>
+</div></div>
+
+<!-- 2015-2016 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. P. M. CHOUGULE</p></div>
+  <div class="card-back"><p>2015 – 2016</p></div>
+</div></div>
+
+<!-- 2016-2017 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. RAVINDRA SHINDE</p></div>
+  <div class="card-back"><p>2016 – 2017</p></div>
+</div></div>
+
+<!-- 2018-2019 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. ASHOK JADHAV</p></div>
+  <div class="card-back"><p>2018 – 2019</p></div>
+</div></div>
+
+<!-- 2019-2020 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. SANDIP SALOKHE</p></div>
+  <div class="card-back"><p>2019 – 2020</p></div>
+</div></div>
+
+<!-- 2020-2021 -->
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. ABASAHEB M. SHIRKE</p></div>
+  <div class="card-back"><p>2020 – 2021</p></div>
+</div></div>
+
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. ASHA JADHAV</p></div>
+  <div class="card-back"><p>2021 – 2022</p></div>
+</div></div>
+
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. GEETA PILLAI</p></div>
+  <div class="card-back"><p>2022 – 2023</p></div>
+</div></div>
+
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. KIRAN DOSHI</p></div>
+  <div class="card-back"><p>2023 – 2024</p></div>
+</div></div>
+
+<div class="card"><div class="card-inner">
+  <div class="card-front"><p>DR. AMOL KODOLIKAR</p></div>
+  <div class="card-back"><p>2024 – 2025</p></div>
+</div></div>
+
+
+    </div>
+  </section>
+
+    <footer>
+    <p>&copy; 2025 Kolhapur Medical Association | All Rights Reserved</p>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+
+
+
+</body>
+</html>

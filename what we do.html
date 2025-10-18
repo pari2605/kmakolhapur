@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads Page</title>
+    <script src="../javascript/script.js"></script>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      line-height: 1.6;
+      background-image: url(https://res.cloudinary.com/drylz0m88/image/upload/v1760176806/gallery_1_sfj0gp.jpg);
+       background-repeat: no-repeat;  /* avoid tiling */
+  background-position: center;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+    }
+
+     /* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;   /* reduced padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: black;
+  font-weight: bold;
+  box-sizing: border-box; /* prevents overflow from padding */
+}
+.navbar .logo
+{
+  width: px;
+  height: 58px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;   /* keep in one line */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 15px;   /* reduced gap */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: large;     /* smaller font */
+  font-weight: bold;
+  white-space: nowrap; /* stops words breaking */
+}
+
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #00ffcc;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 4rem;
+      color: black;
+      padding: 100px;
+    }
+
+    /* Downloads Section */
+    .downloads {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px auto;
+      flex-wrap: wrap;
+      max-width: 900px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #0073e6;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #0073e6;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .card a:hover {
+      background: #005bb5;
+    }
+
+    /* Image + Paragraph Section */
+    .section {
+      margin: 60px auto;
+      text-align: center;
+      max-width: 900px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #555;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div> <img class="logo" src=https://res.cloudinary.com/drylz0m88/image/upload/v1760176810/logo_kma_mqqdr6.png alt="kma logo"></div>   
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="digital kma.html">Digital KMA</a></li>
+      <li><a href="what we do.html" class="active">What we do</a></li>
+      <li><a href="contact us.html">Contact us</a></li>
+    </ul>
+  </header>
+
+  <!-- Page Title -->
+  <h1>FORMS</h1>
+
+  <!-- PDF Download Cards -->
+  <div class="downloads">
+    <div class="card">
+      <h3>Hospital Board of India</h3>
+      <a href="" download>📄 Download PDF</a>
+    </div>
+    <div class="card">
+      <h3> KMA Membership Form</h3>
+      <a href="/html/PDFs/KMA Life Membership Form 1 (1).pdf" download>📄 Download PDF</a>
+    </div>
+     <div class="card">
+      <h3> IMA Membership Form</h3>
+      <a href="/html/PDFs/IMA Membership Form latest NEW.pdf" download>📄 Download PDF</a>
+    </div>
+  </div>
+ 
+
+  <!-- Image + Paragraph Section -->
+  <div class="section">
+    <img src=https://res.cloudinary.com/drylz0m88/image/upload/v1760176803/HBI-Letter-to-all-Doctors-Medical-Tourism-page_p1bnce.jpg alt="Event Photo">
+    <p>
+  Any life Member of KMA / IMA can enroll if He/She is willing to participate, other allied branches like dentistry, Ayushman Practitioners like Ayurveda, homeopathy or Medical Tourism friendly facility like wellness clinic – rehabilitation through Yoga, Physiotherapy Centre etc. provided they are KMA life member.
+    </p>
+  </div>
+
+</body>
+</html>
